@@ -156,20 +156,20 @@ local library = {
     pointers = {},
     settings = {
         guiname = "Hexagon",
-		title = "Legit-Ware",
+		title = "Hexagon",
 		logo = "rbxassetid://4350178803", -- "http://www.roblox.com/asset/?id=1503300065",
-        footer = "lol got u",
+        footer = "hi",
         modal = true,
         font = Enum.Font.SourceSans,
         textsize = 16,
         textstroke = true
     },
     theme = {
-        buttons = Color3.fromRGB(19, 119, 255), -- toggle, sliders colors
-        text = Color3.fromRGB(255, 255, 255),
+        buttons = Color3.fromRGB(30, 155, 255), -- toggle, sliders colors
+        text = Color3.fromRGB(235, 235, 235),
         textboxtext = Color3.fromRGB(145, 145, 145),
         main = Color3.fromRGB(30, 30, 30),
-        outline = Color3.fromRGB(25, 25, 25),
+        outline = Color3.fromRGB(60, 60, 60),
         tabholder = Color3.fromRGB(35, 35, 35),
         tabbutton = Color3.fromRGB(30, 30, 30),
         tabselected = Color3.fromRGB(50, 50, 50)
@@ -475,16 +475,17 @@ function library:CreateWindow(csize, cpos)
 
 	spectators.main = library:create("TextButton", {
 		Position = UDim2.new(0, (workspace.CurrentCamera.ViewportSize.X/2)-100, 0, (workspace.CurrentCamera.ViewportSize.Y/2)-320),
-		Size = UDim2.new(0,200,0,40),
+		Size = UDim2.new(0,205,0,30),
+		Postion = UDim2.new(0,1,0.325,0)
 		BackgroundColor3 = self.theme.main,
 		BorderColor3 = self.theme.outline,
 		Text = "",
 		Name = "Spectators",
 		AutoButtonColor = false,
 		Active = true,
-		Draggable = true,
+		Draggable = false,
 		Selectable = true,
-		Visible = false,
+		Visible = true,
 		Parent = library.base
 	})
 
@@ -516,9 +517,9 @@ function library:CreateWindow(csize, cpos)
 	
 	spectators.layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
 		if spectators.layout.AbsoluteContentSize.Y == 0 then
-			spectators.main.Size = UDim2.new(0,200,0,40)
+			spectators.main.Size = UDim2.new(0,205,0,30)
 		else
-			spectators.main.Size = UDim2.new(0,200,0,spectators.layout.AbsoluteContentSize.Y+34)
+			spectators.main.Size = UDim2.new(0,205,0,spectators.layout.AbsoluteContentSize.Y+34)
 		end
 	end)
 	
